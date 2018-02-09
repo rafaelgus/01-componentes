@@ -1,4 +1,5 @@
 import React, { Component, Proptypes } from 'react'
+import CoursesList from './CoursesList'
 
 class App extends Component{
     constructor(...props ){
@@ -14,18 +15,7 @@ class App extends Component{
 
     render(){
         return(
-            <div>
-                <form>
-                 <input type="text"  placeholder="Nombre del Curso" name="name" require />
-                 <input type="text"  placeholder="Profesor" name="teacher" require />
-                 <input type="hidden" name="id" value={Math.floor(Math.random()*100)} />
-                 <input type="submit" value="Guardar"/>
-                </form>
-                <ul>
-                    <li>Curso 1</li>
-                    <li>Curso 2</li>
-                </ul>
-            </div>
+          <CoursesList courses={this.state.courses} />
             
         )
     }
